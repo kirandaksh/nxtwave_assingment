@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my_profile website</title>
+    <link rel="shortcut Icon" type="x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.10/base.min.css" rel="stylessheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<style>
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(90deg);
+        }
+    }
+
+    @keyframes glow {
+
+        0%,
+        100% {
+            box-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6, 0 0 30px #3b82f6;
+        }
+
+        50% {
+            box-shadow: 0 0 20px #9333ea, 0 0 30px #9333ea, 0 0 40px #9333ea;
+        }
+    }
+
+    .animate-glow-rotate {
+        animation: rotate 6s linear infinite, glow 2s ease-in-out infinite alternate;
+    }
+</style>
+<body>
+    <nav class="bg-gray-600 p-2">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white text-xl font-bold">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAABMlBMVEX///
+                8AtObC5e4KsuYAtOT6/v7P6/O44u6Y1udXwd8ru+UAt+oku+d9yuAFteQzudw/vNwStt+l2ucAsumx3enx+f
+                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" class="image-size" alt="kiran_logo">
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="text-white hover:text-gray-300">Home</a>
+                <a href="#" class="text-white hover:text-gray-300">About</a>
+                <a href="#" class="text-white hover:text-gray-300">Resume</a>
+                <a href="#" class="text-white hover:text-gray-300">My_Project</a>
+                <a href="#" class="text-white hover:text-gray-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <button class="bg-gradient-to-r from-red-900 via-purple-500 to-blue-text-white px-6 py-3 rounded-lg shadow-lg transform animate-glow-rotate">
+        animation button
+    </button>
+    <div class="bg-container flex flex-row">
+        <div class="d-flex flex-row justify-content-center">
+            <img src="https://i.ibb.co/1YKfGBPw/clg.jpg" alt="profile_log" class="img-size m-20">
+        </div>
+        <div class="">
+            <h1 class="text-gray font-bold">
+                Kiran Daksh
+            </h1>
+            <p class="text-gray-300">
+                I'm a Full Stack Developer
+            </p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</body>
+</html>
+
