@@ -38,7 +38,7 @@ const startVoiceInput = () => {
             let spokenText = e.results[0][0].transcript; 
             handleCommands(spokenText.toLowerCase())
             box.classList.remove("btn-box");
-            button.innerHTML = `<i class="fa-solid fa-microphone-lines-slaph"></i>`;
+            button.innerHTML = `<i class="fa-solid fa-microphone-lines-slash"></i>`;
         }
         recogination.start();
     }
@@ -47,7 +47,7 @@ const startVoiceInput = () => {
     }
 }
 
-button.onClick = () => {
+button.onclick = () => {
     box.classList.add("btn-box");
     button.innerHTML = `<i class="fa-solid fa-microphone-lines"></i>`;
     startVoiceInput();
@@ -91,7 +91,7 @@ const handleCommands = command => {
         window.open("calculator://", "_blank");
     }
     else if(command.includes("tell me time")  || command.includes("time")) {
-        let time = new Date().toLocaleTimeString(undefined, {hour: "numeric", minute: "numeric", second: "numeric"});
+        let time = new Date().toLocaleTimeString(undefined, {hour: "numeric", minute: "numeric"});
         speakFun(`The current time is ${time}`);
     }
     else if(command.includes("tell me date")  || command.includes("date")) {
