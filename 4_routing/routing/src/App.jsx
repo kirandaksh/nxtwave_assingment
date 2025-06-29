@@ -1,27 +1,31 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Product from './components/Product';
-import ProductDetails from './components/ProductDetails';
-import PageNotFound from './components/PageNotFound';
-import './App.css';
+import './App.css'
+import NavBar from './components/NavBar'
+import { Routes, Route, Navigate } from "react-router-dom";
+import PageNotFound from './pages/PageNotFound'
+import Home from './pages/Home';
+import ProductDetails from './pages/ProductDetails'
+import User from './pages/User'
+import Cart from './pages/Cart'
+import PaginationProvider from './contexts/PaginationContext';
 
 function App() {
   return (
-    <>
-      <Navbar />
+    <PaginationProvider>
+      <NavBar></NavBar>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/product" element={<Product />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
-        <Route path="/home" element={<Navigate to="/" replace />} />
-        <Route path="*" element={<PageNotFound />} />
+        <Route path="/" element={<Home></Home>}> </Route>
+        <Route path="/cart" element={<Cart></Cart>}></Route>
+        <Route path="/product/:id" element={<ProductDetails></ProductDetails>}> </Route>
+        <Route path="/user" element={<User></User>}></Route>
+        <Route path="/home" element={<Navigate to="/"></Navigate>}></Route>
+        <Route path="*" element={<PageNotFound></PageNotFound>}> </Route>
       </Routes>
-    </>
-  );
+    </PaginationProvider>
+
+  )
 }
 
-export default App;
+export default App
 
 
 
